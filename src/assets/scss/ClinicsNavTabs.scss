@@ -1,0 +1,87 @@
+.clinics {
+	--bs-nav-tabs-border-width: 1px;
+	--bs-nav-tabs-border-color: white;
+	--bs-nav-tabs-border-radius: 0.5rem;
+	--bs-nav-tabs-link-hover-border-color: #{$secondary-color} #{$secondary-color}
+		white;
+	--bs-nav-tabs-link-active-color: $main-color $main-color white;
+	--bs-nav-tabs-link-active-bg: white;
+	--bs-nav-tabs-link-active-border-color: white;
+}
+.btn-dropdown {
+	color: $main-color;
+	border: 2px solid $main-color;
+	font-size: 1.5rem;
+	width: 100%;
+	text-align: left;
+}
+.btn:focus {
+	outline: 0;
+	box-shadow: 0 0 0 0.25rem rgba($main-color, 0.25);
+}
+.dropdown-toggle::after {
+	position: absolute;
+	top: 50%;
+	right: 12px;
+	transform: translateY(-50%);
+}
+.dropdown-item {
+	font-size: 1.2rem;
+}
+.dropdown-item.active {
+	color: black;
+	background-color: $secondary-color;
+}
+.nav-link {
+	color: #565656;
+	position: relative;
+	height: 100%;
+	box-shadow: 0px -2px 0px -1px rgba(0, 0, 0, 0.1);
+	padding: 8px 16px 3px 16px;
+}
+.nav-link::before {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 100%;
+	transform: skew(-15deg) translateX(8px) translateY(-1px);
+	border-top-left-radius: 0.5rem;
+	content: '';
+	height: calc(100% + 2px);
+	width: 15px;
+	background-color: inherit;
+}
+.nav-item:first-child .nav-link::before {
+	display: none;
+}
+.nav-link::after {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 100%;
+	transform: skew(15deg) translateX(-8px) translateY(-1px);
+	border-top-right-radius: 0.5rem;
+	content: '';
+	height: calc(100% + 2px);
+	width: 15px;
+	background-color: inherit;
+	box-shadow: 3px -1px 0px -1px rgba(0, 0, 0, 0.1);
+}
+.nav-link {
+	z-index: var(--i);
+	background-color: $secondary-color;
+}
+.nav-link.active {
+	z-index: 10;
+	background-color: white;
+}
+@media (min-width: 768px) {
+	.nav-item {
+		margin-right: -10px;
+	}
+}
+@media (min-width: 992px) {
+	.nav-item {
+		margin-right: 10px;
+	}
+}

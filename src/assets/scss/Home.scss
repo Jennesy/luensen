@@ -1,0 +1,97 @@
+.to-clinics-btn {
+	position: relative;
+	width: 100%;
+	height: 150px;
+	z-index: 1;
+	&::before {
+		content: '';
+		display: block;
+		background-image: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+		background-size: cover;
+		background-position: 0 88%;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+	}
+	&::after {
+		content: '';
+		display: block;
+		background-color: black;
+		opacity: 50%;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		transition: opacity 0.2s ease-out;
+	}
+	&:hover::after {
+		opacity: 70%;
+	}
+	a {
+		font-size: 1.2rem;
+		display: inline-block;
+		width: 100%;
+		height: 100%;
+		line-height: 150px;
+		color: white;
+	}
+}
+.btn:focus {
+	outline: 0;
+	box-shadow: 0 0 0 0.25rem rgba($main-color, 0.25);
+}
+.service {
+	&-list {
+		position: relative;
+		padding: 1rem;
+		justify-content: center;
+	}
+
+	&-items {
+		max-width: 270px;
+		gap: 0.8rem 0.4rem;
+	}
+	&-item {
+		a {
+			color: black;
+		}
+		background-color: white;
+		padding: 0 0.5rem;
+		border-radius: 0.75rem;
+		transition: all 0.2s ease-out;
+		cursor: pointer;
+		&:hover {
+			background-color: $main-color;
+			a {
+				color: white;
+			}
+		}
+	}
+}
+.more-service {
+	position: relative;
+	color: $main-color;
+	cursor: pointer;
+	border-bottom: 1px solid transparent;
+	&::after {
+		position: absolute;
+		content: '';
+		height: 5px;
+		width: 0%;
+		border-radius: 2.5px;
+		left: 0;
+		bottom: -5px;
+		background-color: $secondary-color;
+		transition: all 0.2s ease-out;
+	}
+	&:hover {
+		&::after {
+			width: 100%;
+		}
+	}
+}

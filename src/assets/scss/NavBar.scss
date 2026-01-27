@@ -1,0 +1,279 @@
+.nav-bar {
+	position: relative;
+	display: flex;
+	justify-content: flex-start;
+	padding: 0 1rem;
+	color: white;
+	a {
+		color: black;
+	}
+}
+.navbar {
+	&__gov-health-logo {
+		display: none;
+		width: 70px;
+	}
+	&__brand {
+		flex-shrink: 0;
+		transition: all 0.5s ease-out;
+		height: 100px;
+		display: flex;
+		flex-direction: row;
+		justify-content: start;
+		align-items: center;
+		&.cover {
+			pointer-events: none;
+		}
+		&-logo {
+			order: 0;
+			margin-top: 0px;
+			svg {
+				margin-top: 30px;
+				height: 70px;
+			}
+		}
+		&-name {
+			color: white;
+			font-size: 1.5rem;
+			line-height: 4rem;
+			margin-top: 0;
+			padding: 0.5rem;
+			border-color: rgba(255, 255, 255, 0);
+			transition: all 0.5s ease-out;
+		}
+		&-slogan {
+			display: none;
+		}
+	}
+	&__items {
+		transition: all 0.5s ease-out;
+		position: fixed;
+		opacity: 1;
+		height: calc(100vh - 100px);
+		font-size: 1.4rem;
+		line-height: 1.4rem;
+		background-color: white;
+		bottom: 0;
+		right: -100vw;
+		width: 100vw;
+		z-index: 999;
+	}
+	&__item {
+		border-bottom: 1px solid $main-color;
+		color: black;
+		text-align: center;
+		cursor: pointer;
+		&:hover {
+			background-color: rgba(54, 116, 125, 0.5);
+		}
+		a {
+			display: inline-block;
+			padding: 1.5rem;
+			width: 100%;
+			height: 100%;
+			&.active {
+				background-color: rgba(54, 116, 125, 0.1);
+			}
+		}
+	}
+	&__hamburger {
+		&-checkbox {
+			position: absolute;
+			visibility: hidden;
+		}
+		color: white;
+		position: absolute;
+		top: 50%;
+		right: 1rem;
+		transform: translateY(-50%);
+		width: 24px;
+		cursor: pointer;
+	}
+	&__items.checked {
+		right: 0;
+	}
+	&__items.checked::before {
+		position: absolute;
+		right: 100%;
+		content: '';
+		height: 100%;
+		width: 100vw;
+		background-color: black;
+		opacity: 80%;
+	}
+}
+@media (min-width: 576px) {
+	.navbar {
+		&__brand-name {
+			font-size: 2rem;
+		}
+		&__items {
+			right: -300px;
+			width: 300px;
+		}
+		&__item {
+			text-align: left;
+		}
+	}
+}
+@media (min-width: 768px) {
+	.nav-bar {
+		justify-content: space-between;
+		&.cover {
+			justify-content: center;
+		}
+	}
+	.navbar {
+		&__brand {
+			&.cover {
+				height: 100vh;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				.navbar__gov-health-logo {
+					display: block;
+				}
+				.navbar__brand {
+					&-logo {
+						display: block;
+						order: 1;
+						margin-top: 10px;
+						svg {
+							width: 100px;
+							margin-top: 0px;
+							height: auto;
+						}
+					}
+					&-name {
+						display: block;
+						font-size: 4rem;
+						margin-top: 0.8rem;
+						border-bottom: 1px solid white;
+					}
+					&-slogan {
+						display: block;
+						color: white;
+						font-size: 2rem;
+						font-weight: 200;
+						letter-spacing: 0.5rem;
+					}
+				}
+			}
+			&-logo {
+				order: 0;
+				margin-top: 0px;
+				svg {
+					margin-top: 30px;
+					height: 70px;
+				}
+				path {
+					fill: white;
+				}
+			}
+			&-name {
+				color: white;
+				font-size: 2rem;
+				line-height: 4rem;
+				margin-top: 0;
+				padding: 0.5rem;
+				border-color: rgba(255, 255, 255, 0);
+				transition: all 0.5s ease-out;
+			}
+			&-slogan {
+				display: none;
+			}
+		}
+		&__items {
+			right: -300px;
+			width: 300px;
+			&.cover {
+				position: absolute;
+				opacity: 0;
+				& ~ .navbar__hamburger {
+					opacity: 0;
+				}
+			}
+		}
+		&__item {
+			border-bottom: 1px solid $main-color;
+		}
+		&__hamburger {
+			transition: all 0.5s ease-out 0.5s;
+			opacity: 1;
+			right: 0;
+		}
+		&__items.checked {
+			right: 0;
+		}
+	}
+}
+@media (min-width: 992px) {
+	.nav-bar {
+		display: flex;
+		justify-content: space-between;
+		a {
+			color: white;
+		}
+		&.cover {
+			justify-content: center;
+		}
+	}
+	.navbar {
+		&__items {
+			transition: all 0.5s ease-out 0.5s;
+			position: relative;
+			right: auto;
+			bottom: auto;
+			height: 100px;
+			font-size: 1.2rem;
+			line-height: 1.2rem;
+			background-color: transparent;
+			width: auto;
+			padding: auto;
+			&.cover {
+				position: absolute;
+				opacity: 0;
+			}
+			ul {
+				display: flex;
+				margin-block: 20px;
+			}
+			&.checked::before {
+				display: none;
+			}
+		}
+		&__item {
+			margin: 1rem;
+			border-bottom: 1px solid white;
+			padding: 3px;
+			&:hover {
+				position: relative;
+				background-color: transparent;
+				::before {
+					content: '+';
+					position: absolute;
+					left: -0.7rem;
+					font-size: 0.5rem;
+				}
+				::after {
+					content: '+';
+					position: absolute;
+					right: -0.7rem;
+					font-size: 0.5rem;
+					line-height: 1rem;
+				}
+			}
+			a {
+				display: inline;
+				padding: 0;
+				&.active {
+					background-color: transparent;
+				}
+			}
+		}
+		&__hamburger {
+			display: none;
+		}
+	}
+}

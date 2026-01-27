@@ -1,0 +1,57 @@
+h4 {
+	font-weight: 600;
+	color: DarkCyan;
+}
+.clinics {
+	.clinic-info {
+		&__team-member {
+			&-text {
+				cursor: pointer;
+				transition: all 0.2s ease-out;
+				background-color: #36747d33;
+				border-radius: 0.5rem;
+				padding: 0.5rem 1rem;
+				color: var(--bs-body-color);
+				line-height: 1rem;
+			}
+			&-text:hover {
+				position: relative;
+				background-color: #36747d66;
+				&::after {
+					content: '+';
+					font-size: 1.5rem;
+					color: white;
+					position: absolute;
+					top: 0;
+					right: 0;
+				}
+			}
+		}
+
+		&__contact-item {
+			a {
+				color: var(--bs-body-color);
+			}
+			a:hover {
+				color: DarkCyan;
+			}
+			i {
+				display: inline-block;
+				width: 1rem;
+				text-align: center;
+			}
+			gap: 0.5rem;
+		}
+	}
+}
+@media (min-width: 768px) {
+	.clinics {
+		.clinic-info {
+			background-color: white;
+			border-radius: 1rem;
+			border-top-left-radius: 0;
+			padding: 3rem;
+			margin: auto 0;
+		}
+	}
+}

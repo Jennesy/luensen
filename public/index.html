@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<meta
+			name="description"
+			content="我們是經營最完善最專業的優質團隊。20多年的寒暑，兢兢業業全心投入洗腎的領域，精神和熱忱始終如一！我們有專業的專科醫師，定期接受培訓的護理人員，隨時為腎友衛教宣導，以確保提供腎友最高品質的透析服務。另外，我們為腎友們提供最貼心的專車接送，視病如親的醫療團隊，讓所有接受洗腎服務的腎友們，能在溫馨安全的環境中，接受最好的照護和治療。專治：尿毒搔癢症不寧腿 腎性貧血 腎性骨病變 任何洗腎相關疾病※本院積極推廣C肝治療，達成院內C肝清零，杜絕染病風險"
+		/>
+		<meta
+			name="keyword"
+			content="洗腎,血液透析,永和,中和,汐止,南港,松山,景美,文山,榮總,台大,馬偕,哈佛,三總,亞東,雙和,戴良恭,戴良恭診所,戴良恭洗腎中心,欣禾,欣禾診所,欣禾洗腎中心,世康,世康診所,世康洗腎中心,康禾,康禾診所,康禾洗腎中心,景安,景安診所,景安洗腎中心,戴良恭醫療體系,戴良恭洗腎中心,戴良恭聯合洗腎中心,陳慧言,黎彩欣,宋玉峰,張立美,林瑾如,郭建偉,鄭安勳,顧乃永,黃寶瓊,劉代燃,林素珍,呂婷婷,品質第一,品質最好,高品質,內科,診所,內科診所,慢性病,腎臟病,腎性骨病變,腎性貧血,不寧腿,健康檢查,尿毒搔癢症,C肝"
+		/>
+		<meta
+			property="og:title"
+			content="<%= htmlWebpackPlugin.options.title %>"
+		/>
+		<meta
+			property="og:site_name"
+			content="<%= htmlWebpackPlugin.options.title %>"
+		/>
+		<meta
+			property="og:image"
+			content="https://user-images.githubusercontent.com/68381960/195059012-96e1d2a7-a005-409d-8e7d-ee056ed2dab7.png"
+		/>
+		<meta
+			property="og:description"
+			content="戴良恭診所成立於民國85年8月2日，是中永和經營最久最專業的洗腎室。我們秉持著專業的知識和技術，20多年的寒暑，在地深耕始終如一！我們的團隊在戴良恭院長、陳慧言醫師及黎彩欣醫師等專科醫師的帶領下，定期培訓護理人員，隨時為腎友衛教宣導，以確保提供腎友最高品質的透析服務。不同於一般的洗腎中心，我們的洗腎室位於一樓平面，寬敞無障礙的空間，為腎友及家屬的進出接送，帶來便利和安心！另外，我們也為腎友們提供最貼心的專人專車免費接送服務。視病如親的醫療團隊，讓所有接受洗腎服務的腎友們，能在溫馨安全的環境中，接受最好的照護和治療。"
+		/>
+		<meta itemprop="name" content="<%= htmlWebpackPlugin.options.title %>" />
+		<meta
+			itemprop="description"
+			content="戴良恭診所成立於民國85年8月2日，是中永和經營最久最專業的洗腎室。我們秉持著專業的知識和技術，20多年的寒暑，在地深耕始終如一！我們的團隊在戴良恭院長、陳慧言醫師及黎彩欣醫師等專科醫師的帶領下，定期培訓護理人員，隨時為腎友衛教宣導，以確保提供腎友最高品質的透析服務。不同於一般的洗腎中心，我們的洗腎室位於一樓平面，寬敞無障礙的空間，為腎友及家屬的進出接送，帶來便利和安心！另外，我們也為腎友們提供最貼心的專人專車免費接送服務。視病如親的醫療團隊，讓所有接受洗腎服務的腎友們，能在溫馨安全的環境中，接受最好的照護和治療。"
+		/>
+		<link rel="icon" href="<%= BASE_URL %>favicon.svg" />
+		<base href="<%= BASE_URL %>" />
+		<title><%= htmlWebpackPlugin.options.title %></title>
+	</head>
+	<body>
+		<script>
+			;(function () {
+				let redirect = sessionStorage.redirect
+				delete sessionStorage.redirect
+				if (redirect && redirect != location.href) {
+					history.replaceState(null, null, redirect)
+				}
+			})()
+		</script>
+		<div id="app"></div>
+		<!-- built files will be auto injected -->
+	</body>
+</html>

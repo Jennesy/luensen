@@ -1,0 +1,85 @@
+.resource-link {
+	font-size: 1.2rem;
+	a {
+		display: inline-block;
+		padding: 0.3rem;
+		color: $main-color;
+		width: 100%;
+		height: 100%;
+		border-radius: 0.2rem;
+		text-decoration: underline;
+	}
+	a:hover {
+		color: black;
+		background-color: $secondary-color;
+		text-decoration: none;
+	}
+	a::before {
+		content: '';
+		display: inline-block;
+		width: 1.2rem;
+		height: 1.2rem;
+		background-color: $main-color;
+		-webkit-mask-image: url('../../public/images/healthInfo/fileIcon.svg');
+		mask-image: url('../../public/images/healthInfo/fileIcon.svg');
+		mask-repeat: no-repeat;
+		position: relative;
+		top: 3px;
+		margin-right: 0.5rem;
+	}
+	a:hover::before {
+		content: '';
+		background-color: black;
+		-webkit-mask-image: url('../../public/images/healthInfo/fileViewIcon.svg');
+		mask-image: url('../../public/images/healthInfo/fileViewIcon.svg');
+		mask-repeat: no-repeat;
+	}
+}
+.modal-dialog {
+	max-width: none;
+	margin: 1.75rem;
+}
+.more-info {
+	font-size: 1.2rem;
+	background-color: rgba($secondary-color, 0.5);
+	padding-inline: 1.5rem;
+	border-radius: 3px;
+	padding-block: 0.5rem;
+	line-height: 1.8;
+	a {
+		color: $main-color;
+		text-decoration-line: underline;
+		&:hover {
+			color: var(--bs-body-color);
+		}
+		&::before {
+			content: '';
+			display: inline-block;
+			width: 1.2rem;
+			height: 1.2rem;
+			position: relative;
+			top: 3px;
+			background-color: $main-color;
+			-webkit-mask-image: url('../../public/images/healthInfo/openWindowIcon.svg');
+			mask-image: url('../../public/images/healthInfo/openWindowIcon.svg');
+			mask-repeat: no-repeat;
+		}
+		&:hover::before {
+			background-color: var(--bs-body-color);
+			-webkit-mask-image: url('../../public/images/healthInfo/openWindowIcon.svg');
+			mask-image: url('../../public/images/healthInfo/openWindowIcon.svg');
+			mask-repeat: no-repeat;
+		}
+	}
+}
+@media (min-width: 768px) {
+	.modal-dialog {
+		max-width: 700px;
+		margin: 1.75rem auto;
+	}
+}
+@media (min-width: 1200px) {
+	.learning.container {
+		max-width: 992px;
+	}
+}

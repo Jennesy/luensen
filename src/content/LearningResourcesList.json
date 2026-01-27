@@ -1,0 +1,73 @@
+{
+	"files": {
+		"平日血管通路的照顧": {
+			"fileName": "01DailyHemodialysisAccessCare"
+		},
+		"如何增加血液透析的效能": {
+			"fileName": "02EfficacyOfHemodialysis"
+		},
+		"血液透析中可能產生之不適應": {
+			"fileName": "03PossibleDiscomfortCauseByHemodialysis"
+		},
+		"血液透析介紹": {
+			"fileName": "04HemodialysisIntro"
+		},
+		"血液透析患者的相關社會福利": {
+			"fileName": "05HemodialysisSocialWelfare"
+		},
+		"血液透析患者須知": {
+			"fileName": "06HemodialysisMustKnow"
+		},
+		"居家照護注意事項": {
+			"fileName": "07HomeCare"
+		},
+		"長期血管通路的選擇": {
+			"fileName": "08HemodialysisAccessOptions"
+		},
+		"洗腎病患的飲食控制": {
+			"fileName": "09DietControlForDialysisPatients"
+		},
+		"高血脂病人飲食指導": {
+			"fileName": "10DietaryGuidanceForHyperlipidemiaPatients"
+		},
+		"貧血的控制": {
+			"fileName": "11AnemiaControl"
+		},
+		"透析前-中-後的護理": {
+			"fileName": "12HemodialysisCare"
+		},
+		"腎臟病的症狀": {
+			"fileName": "13KidneyDiseaseSymptoms"
+		},
+		"慢性腎臟病健康管理手冊": {
+			"fileName": "ChronicKidneyDiseaseHealthManagementHandbook"
+		}
+	},
+	"images": [
+		{ "fileName": "20170926_171019_0002", "alt": "運動對糖尿病人的好處" },
+		{ "fileName": "20170926_171019_0003", "alt": "糖尿病７守則" },
+		{ "fileName": "20170926_171019_0004", "alt": "糖尿病的慢性併發症01" },
+		{ "fileName": "20170926_171019_0005", "alt": "糖尿病的慢性併發症02" },
+		{ "fileName": "20170926_171019_0006", "alt": "有效抗血壓的方法" }
+	],
+	"images02": [
+		{ "fileName": "UrinaryToxin01", "alt": "尿毒素01", "ext": "jpeg" },
+		{ "fileName": "UrinaryToxin02", "alt": "尿毒素02", "ext": "jpeg" },
+		{
+			"fileName": "HypoglycemicDrugsAndKidneyFunction",
+			"alt": "降血糖藥物和腎功能",
+			"ext": "jpeg"
+		},
+		{ "fileName": "Hyperphosphatemia", "alt": "高磷血症觀點", "ext": "jpeg" },
+		{
+			"fileName": "ParathyroidHormoneValue",
+			"alt": "副甲狀腺素目標值",
+			"ext": "jpeg"
+		},
+		{
+			"fileName": "Parathyroidectomy",
+			"alt": "副甲狀腺切除適應症",
+			"ext": "jpg"
+		}
+	]
+}

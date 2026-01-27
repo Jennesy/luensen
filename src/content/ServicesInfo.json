@@ -1,0 +1,22 @@
+{
+	"all": {
+		"title": "概述",
+		"path": "",
+		"description": "<ul><li>舒適的環境(詳見環境介紹)[link]<li>重大傷病卡代辦<li>專車服務[link]<li>定期生化檢查[link]<li>衛教宣導</ul>"
+	},
+	"environment": {
+		"title": "環境介紹",
+		"path": "environment",
+		"description": "<ul><li>固定護士<li>固定床位<li>每床備有液晶電視<li>拋棄式床單<li>每床配有插座</ul>"
+	},
+	"shuttle": {
+		"title": "專車接送",
+		"path": "shuttle",
+		"description": ""
+	},
+	"examination": {
+		"title": "定期檢查",
+		"path": "examination",
+		"description": "<ul><li>每月抽血<li>血壓監測</ul>"
+	}
+}

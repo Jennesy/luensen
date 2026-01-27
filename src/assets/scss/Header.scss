@@ -1,0 +1,92 @@
+header {
+	padding: 1rem;
+}
+.highlight {
+	display: inline-block;
+	background-color: rgba($main-color, 0.25);
+	padding-inline: 0.5rem;
+	border-radius: 3px;
+}
+.strength {
+	&-list {
+		position: relative;
+		padding: 1rem;
+		justify-content: end;
+	}
+
+	&-items {
+		height: 4rem;
+		text-align: right;
+		justify-content: end;
+		align-items: start;
+	}
+	&-item {
+		a {
+			color: black;
+		}
+		background-color: white;
+		padding: 0 1rem;
+		border-radius: 0.75rem;
+		transform: rotate(-30deg);
+		margin: 0 -0.75rem;
+		transition: all 0.2s ease-out;
+		cursor: pointer;
+		&:hover {
+			background-color: $main-color;
+			a {
+				color: white;
+			}
+		}
+	}
+}
+.more-strength {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	color: black;
+	cursor: pointer;
+	border-bottom: 1px solid transparent;
+	&::after {
+		position: absolute;
+		content: '';
+		height: 5px;
+		width: 0%;
+		border-radius: 2.5px;
+		left: 0;
+		bottom: 0;
+		background-color: #{$secondary-color};
+		transition: all 0.2s ease-out;
+	}
+	&:hover {
+		&::after {
+			width: 100%;
+		}
+	}
+}
+@media (min-width: 992px) {
+	.strength {
+		&-list {
+			position: relative;
+			order: 1;
+			justify-content: center;
+		}
+		&-items {
+			height: 100%;
+			justify-content: start;
+			align-items: center;
+		}
+		&-item {
+			background-color: white;
+			padding: 0 1rem;
+			border-radius: 0.75rem;
+			transform: rotate(-30deg);
+			margin: 0 -0.75rem;
+			transition: all 0.2s ease-out;
+			cursor: pointer;
+			&:hover {
+				background-color: $main-color;
+				color: white;
+			}
+		}
+	}
+}
