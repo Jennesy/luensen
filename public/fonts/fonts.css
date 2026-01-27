@@ -1,0 +1,13 @@
+/*
+ * cwTeXFangSong (Chinese Traditional) - Self-hosted
+ * Original: http://www.google.com/fonts/earlyaccess
+ */
+@font-face {
+  font-family: 'cwTeXFangSong';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap; /* Show fallback immediately, swap when loaded */
+  src: local('cwTeXFangSong'),
+       url('./cwTeXFangSong-zhonly.woff2') format('woff2'),
+       url('./cwTeXFangSong-zhonly.woff') format('woff');
+}
