@@ -23,6 +23,7 @@
     "@prerenderer/renderer-puppeteer": "^1.2.4",
     "@vue/cli-service": "^5.0.8",
     "prerender-spa-plugin-next": "^4.2.3",
+    "puppeteer": "^21.0.0",
     "sass": "^1.89.2",
     "sass-loader": "^13.3.3",
     "sitemap": "^8.0.0",

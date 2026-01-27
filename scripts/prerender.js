@@ -31,13 +31,23 @@ try {
     
     // Start a simple HTTP server
     const { spawn } = require('child_process')
-    const server = spawn('npx', ['serve', '-s', distPath, '-p', '3001'], { 
+    const server = spawn('npx', ['serve', '-s', distPath, '-p', '3001'], {
       stdio: 'pipe',
-      shell: true 
+      shell: true
     })
-    
-    // Wait for server to start
-    await new Promise(resolve => setTimeout(resolve, 3000))
+
+    // Listen for server output
+    server.stdout.on('data', (data) => {
+      console.log(`Server: ${data.toString().trim()}`)
+    })
+
+    server.stderr.on('data', (data) => {
+      console.error(`Server error: ${data.toString().trim()}`)
+    })
+
+    // Wait for server to start (increased from 3s to 6s)
+    console.log('⏳ Waiting for server to start...')
+    await new Promise(resolve => setTimeout(resolve, 6000))
     
     for (const route of routes) {
       try {
@@ -82,17 +92,20 @@ try {
     await browser.close()
     server.kill()
     console.log('🎉 Prerendering completed!')
+    finalize()
   }
   
   prerenderWithPuppeteer().catch(error => {
     console.error('❌ Prerendering failed:', error)
     // Fallback to simple copy method
     fallbackPrerender()
+    finalize()
   })
   
 } catch (error) {
   console.log('⚠️  Puppeteer not available, using fallback method')
   fallbackPrerender()
+  finalize()
 }
 
 function fallbackPrerender() {
@@ -132,8 +145,10 @@ function fallbackPrerender() {
   })
 }
 
-// Create GitHub Pages 404.html for client-side routing
-const redirectHtml = `<!DOCTYPE html>
+// Finalize: Create 404.html and generate sitemap
+function finalize() {
+  // Create GitHub Pages 404.html for client-side routing
+  const redirectHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -149,14 +164,15 @@ const redirectHtml = `<!DOCTYPE html>
 </body>
 </html>`
 
-fs.writeFileSync(path.join(distPath, '404.html'), redirectHtml)
-console.log('✅ Created 404.html for GitHub Pages routing')
+  fs.writeFileSync(path.join(distPath, '404.html'), redirectHtml)
+  console.log('✅ Created 404.html for GitHub Pages routing')
 
-console.log('\n🎉 Prerendering complete! All routes now have static HTML files.')
-console.log('📁 Files created in dist/ directory:')
-routes.forEach(route => console.log(`   ${route}/index.html`))
-console.log('   404.html (GitHub Pages redirect)')
+  console.log('\n🎉 Prerendering complete! All routes now have static HTML files.')
+  console.log('📁 Files created in dist/ directory:')
+  routes.forEach(route => console.log(`   ${route}/index.html`))
+  console.log('   404.html (GitHub Pages redirect)')
 
-// Generate sitemap after prerendering
-console.log('\n🗺️  Generating sitemap...')
-require('./generate-sitemap.js')
+  // Generate sitemap after prerendering
+  console.log('\n🗺️  Generating sitemap...')
+  require('./generate-sitemap.js')
+}
