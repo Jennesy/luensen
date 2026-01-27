@@ -63,15 +63,17 @@ export default {
 	created() {
 		window.addEventListener('resize', this.handleResize)
 		this.branch = this.$route.params.branch
+		const allDoctorsArray = []
 		Object.entries(clinicData).forEach(([key, value]) => {
-			this.allDoctors = [...this.allDoctors, ...value.doctors]
+			allDoctorsArray.push(...value.doctors)
 			this.branchValuePair[key] = value.name
 		})
+		this.allDoctors = allDoctorsArray
 		if (!branches.includes(this.branch)) {
 			this.$router.push({ name: 'not-found' })
 		}
 	},
-	destroyed() {
+	beforeUnmount() {
 		window.removeEventListener('resize', this.handleResize)
 	},
 	beforeRouteUpdate(to, from, next) {

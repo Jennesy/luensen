@@ -68,12 +68,12 @@ export default {
 	created() {
 		window.addEventListener('resize', this.handleScreenSize)
 	},
-	destroyed() {
+	beforeUnmount() {
 		window.removeEventListener('resize', this.handleScreenSize)
 	},
 	beforeRouteEnter(to, from, next) {
 		if (window.innerWidth > 768) {
-			next('/clinics')
+			return next('/clinics')
 		}
 		next()
 	},

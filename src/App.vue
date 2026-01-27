@@ -29,6 +29,7 @@ export default {
 	data() {
 		return {
 			isCovered: true,
+			touchMoveOptions: { passive: true },
 		}
 	},
 	methods: {
@@ -37,18 +38,14 @@ export default {
 			window.removeEventListener('click', this.liftScreen)
 			window.removeEventListener('keydown', this.liftScreen)
 			window.removeEventListener('wheel', this.liftScreen)
-			window.removeEventListener('touchmove', this.liftScreen, {
-				passive: true,
-			})
+			window.removeEventListener('touchmove', this.liftScreen, this.touchMoveOptions)
 		},
 	},
 	created() {
 		window.addEventListener('click', this.liftScreen)
 		window.addEventListener('keydown', this.liftScreen)
 		window.addEventListener('wheel', this.liftScreen)
-		window.addEventListener('touchmove', this.liftScreen, {
-			passive: true,
-		})
+		window.addEventListener('touchmove', this.liftScreen, this.touchMoveOptions)
 	},
 }
 </script>
