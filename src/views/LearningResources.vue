@@ -193,7 +193,6 @@
 <script>
 import { files, images, images02 } from '@/content/LearningResourcesList.json'
 import { backToTop } from '@/utils/mixins'
-import { openWindow } from '@/content/WebSvg.json'
 
 export default {
 	name: 'LearningResources',
@@ -203,7 +202,6 @@ export default {
 			files,
 			images,
 			images02,
-			openWindowSVG: openWindow,
 		}
 	},
 }

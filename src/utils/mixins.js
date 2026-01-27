@@ -1,6 +1,9 @@
 export const backToTop = {
 	created() {
-		document.getElementById('view').scrollTop = 0
+		const viewElement = document.getElementById('view')
+		if (viewElement) {
+			viewElement.scrollTop = 0
+		}
 	},
 }
 export const throttle = {
