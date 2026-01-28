@@ -38,7 +38,7 @@
 git clone <repository-url>
 
 # 進入專案目錄
-cd luensen-v2
+cd luensen
 
 # 安裝依賴
 npm install
@@ -76,7 +76,7 @@ npm run lint
 ## 專案結構
 
 ```
-luensen-v2/
+luensen/
 ├── public/              # 靜態資源
 │   ├── index.html      # HTML 模板
 │   └── pdf/            # PDF 文件
